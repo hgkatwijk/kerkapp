@@ -14,6 +14,10 @@
   <preference name="phonegap-version" value="3.0.0" />
 
   <icon src="icon.png" />
+  <icon src="res/icon/android/icon-48-mdpi.png"    gap:platform="android"    gap:density="mdpi" />
+  <icon src="res/icon/android/icon-72-hdpi.png"    gap:platform="android"    gap:density="hdpi" />
+  <icon src="res/icon/android/icon-96-xhdpi.png"   gap:platform="android"    gap:density="xhdpi" />
+  <icon src="res/icon/android/icon-144-xxhdpi.png" gap:platform="android"    gap:density="xxhdpi" />
 
   <access origin="http://diensten.hgkatwijk.nl" />
 
