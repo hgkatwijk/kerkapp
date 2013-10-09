@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "nl.hgkatwijk.diensten"
+        id        = "nl.hgkatwijk.kerkapp"
         version   = "0.1.0">
 
-  <name>Diensten</name>
+  <name>Kerk</name>
 
   <description>
-      Bekijk de diensten van de Hervormde Gemeente Katwijk aan Zee.
+      Bekijk de kerkdiensten van de Hervormde Gemeente Katwijk aan Zee.
   </description>
 
   <preference name="permissions" value="none"/>
@@ -19,6 +19,6 @@
   <icon src="res/icon/android/icon-96-xhdpi.png"   gap:platform="android"    gap:density="xhdpi" />
   <icon src="res/icon/android/icon-144-xxhdpi.png" gap:platform="android"    gap:density="xxhdpi" />
 
-  <access origin="http://diensten.hgkatwijk.nl" />
+  <access origin="http://kerkapp.hgkatwijk.nl" />
 
 </widget>
