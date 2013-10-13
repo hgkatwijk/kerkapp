@@ -7,7 +7,7 @@ config(['$httpProvider', function($httpProvider) {
 }]).
 
 controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
-  $http.jsonp('//kerkapp.hgkatwijk.nl/api/v1/upcoming.php?callback=JSON_CALLBACK').success(function(data) {
+  $http.jsonp('http://kerkapp.hgkatwijk.nl/api/v1/upcoming.php?callback=JSON_CALLBACK').success(function(data) {
     var sermons = data;
 
 
