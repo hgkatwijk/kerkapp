@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="hgkatwijk-kerkapp">
   <head>
     <meta charset="utf-8">
 
@@ -13,14 +13,36 @@
 
     <link rel="stylesheet" href="app.css">
 
-    <script src="app.js" async></script>
+    <script src="js/angular.js"></script>
+    <script src="app.js"></script>
   </head>
-  <body role="application">
+  <body role="application" ng-controller="MainCtrl">
 
     <header role="banner">
       <h1>Kerkdiensten</h1>
+      <nav>
+        <a href="#upcoming">Deze week</a>
+      </nav>
     </header>
+
     <main>
+
+      <section>
+        <div class="day">
+          <h2>Zondag 13 Oktober</h2>
+
+          <div class="daypart morning">
+            <h3>Ochtend</h3>
+
+            <article itemscope itemtype="http://schema.org/Event" ng-repeat="sermon in sermons">
+              <div itemprop="location">{{sermon.church}}</div>
+              <div itemprop="startDate" content="2013-10-13T10:00">{{sermon.time}}</div>
+              <div itemprop="performer">{{sermon.preacher}}</div>
+            </article>
+          </div>
+
+        </div>
+      </section>
 
     </main>
 
