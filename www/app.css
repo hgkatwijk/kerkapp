@@ -1977,9 +1977,10 @@ header[role=banner] h1 {
   padding-right: 0.9375em;
   width: 66.66667%;
   float: left;
+  font-size: 1em;
 }
 
-/* line 60, ../src/scss/app.scss */
+/* line 62, ../src/scss/app.scss */
 main {
   margin-left: auto;
   margin-right: auto;
@@ -1998,14 +1999,20 @@ main:before, main:after {
 main:after {
   clear: both;
 }
-/* line 63, ../src/scss/app.scss */
+/* line 65, ../src/scss/app.scss */
 main > section {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
   width: 100%;
   float: left;
 }
-/* line 67, ../src/scss/app.scss */
+/* line 71, ../src/scss/app.scss */
+main h1,
+main h2,
+main h3 {
+  font-size: 1em;
+}
+/* line 75, ../src/scss/app.scss */
 main article {
   margin-left: -0.9375em;
   margin-right: -0.9375em;
@@ -2026,21 +2033,26 @@ main article:before, main article:after {
 main article:after {
   clear: both;
 }
-/* line 76, ../src/scss/app.scss */
+/* line 84, ../src/scss/app.scss */
 main article [itemprop=location] {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
   width: 100%;
   float: left;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  font-weight: bold;
+  color: #777;
+  font-size: .9em;
 }
-/* line 79, ../src/scss/app.scss */
+/* line 93, ../src/scss/app.scss */
 main article [itemprop=startDate] {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
   width: 25%;
   float: left;
 }
-/* line 82, ../src/scss/app.scss */
+/* line 96, ../src/scss/app.scss */
 main article [itemprop=performer] {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
@@ -2049,7 +2061,7 @@ main article [itemprop=performer] {
 }
 
 @media only screen and (min-width: 1280px) {
-  /* line 89, ../src/scss/app.scss */
+  /* line 103, ../src/scss/app.scss */
   .day {
     margin-left: -0.9375em;
     margin-right: -0.9375em;
@@ -2066,18 +2078,22 @@ main article [itemprop=performer] {
   .day:after {
     clear: both;
   }
-  /* line 92, ../src/scss/app.scss */
+  /* line 106, ../src/scss/app.scss */
   .day > h2 {
     padding-left: 0.9375em;
     padding-right: 0.9375em;
     width: 100%;
     float: left;
   }
-  /* line 96, ../src/scss/app.scss */
+  /* line 110, ../src/scss/app.scss */
   .day .daypart {
     padding-left: 0.9375em;
     padding-right: 0.9375em;
     width: 50%;
     float: left;
+  }
+  /* line 113, ../src/scss/app.scss */
+  .day .daypart > h3 {
+    display: none;
   }
 }
