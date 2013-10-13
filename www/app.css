@@ -2014,15 +2014,43 @@ main h3 {
 }
 /* line 75, ../src/scss/app.scss */
 main article {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d9d9d9;
+  margin-bottom: 1.25em;
+  padding: 1.25em;
+  background: #f2f2f2;
   margin-left: -0.9375em;
   margin-right: -0.9375em;
   max-width: none;
   width: auto;
   *zoom: 1;
-  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
   /*img {
     @include grid-column(3);
   }*/
+}
+/* line 44, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
+main article > :first-child {
+  margin-top: 0;
+}
+/* line 45, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
+main article > :last-child {
+  margin-bottom: 0;
+}
+/* line 50, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
+main article h1, main article h2, main article h3, main article h4, main article h5, main article h6, main article p {
+  color: #333333;
+}
+/* line 54, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
+main article h1, main article h2, main article h3, main article h4, main article h5, main article h6 {
+  line-height: 1;
+  margin-bottom: 0.625em;
+}
+/* line 56, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
+main article h1.subheader, main article h2.subheader, main article h3.subheader, main article h4.subheader, main article h5.subheader, main article h6.subheader {
+  line-height: 1.4;
 }
 /* line 121, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_global.scss */
 main article:before, main article:after {
@@ -2033,7 +2061,7 @@ main article:before, main article:after {
 main article:after {
   clear: both;
 }
-/* line 84, ../src/scss/app.scss */
+/* line 86, ../src/scss/app.scss */
 main article [itemprop=location] {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
@@ -2045,14 +2073,14 @@ main article [itemprop=location] {
   color: #777;
   font-size: .9em;
 }
-/* line 93, ../src/scss/app.scss */
+/* line 95, ../src/scss/app.scss */
 main article [itemprop=startDate] {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
   width: 25%;
   float: left;
 }
-/* line 96, ../src/scss/app.scss */
+/* line 98, ../src/scss/app.scss */
 main article [itemprop=performer] {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
@@ -2061,7 +2089,7 @@ main article [itemprop=performer] {
 }
 
 @media only screen and (min-width: 1280px) {
-  /* line 103, ../src/scss/app.scss */
+  /* line 105, ../src/scss/app.scss */
   .day {
     margin-left: -0.9375em;
     margin-right: -0.9375em;
@@ -2078,21 +2106,21 @@ main article [itemprop=performer] {
   .day:after {
     clear: both;
   }
-  /* line 106, ../src/scss/app.scss */
+  /* line 108, ../src/scss/app.scss */
   .day > h2 {
     padding-left: 0.9375em;
     padding-right: 0.9375em;
     width: 100%;
     float: left;
   }
-  /* line 110, ../src/scss/app.scss */
+  /* line 112, ../src/scss/app.scss */
   .day .daypart {
     padding-left: 0.9375em;
     padding-right: 0.9375em;
     width: 50%;
     float: left;
   }
-  /* line 113, ../src/scss/app.scss */
+  /* line 115, ../src/scss/app.scss */
   .day .daypart > h3 {
     display: none;
   }
