@@ -35,14 +35,14 @@ controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
 
       $scope.sermonsByDay[sermon.date] = $scope.sermonsByDay[sermon.date] || {
         date: days[d.getDay()] + ' ' + d.getDate() + ' ' + months[d.getMonth()],
-        dayparts: {}
+        location: {}
       };
-      $scope.sermonsByDay[sermon.date].dayparts[sermon.time] = $scope.sermonsByDay[sermon.date].dayparts[sermon.time] || {
+      $scope.sermonsByDay[sermon.date].location[sermon.church] = $scope.sermonsByDay[sermon.date].location[sermon.church] || {
         daypart: dp,
         sermons: {}
       };
 
-      $scope.sermonsByDay[sermon.date].dayparts[sermon.time].sermons[sermon.nid] = sermon;
+      $scope.sermonsByDay[sermon.date].location[sermon.church].sermons[sermon.nid] = sermon;
     }
 
   });

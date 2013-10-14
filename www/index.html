@@ -36,14 +36,20 @@
         <div class="day" ng-repeat="day in sermonsByDay">
           <h2>{{day.date}}</h2>
 
-          <div class="daypart morning" ng-repeat="daypart in day.dayparts">
-            <h3>{{daypart.daypart}}</h3>
-
-            <article ng-repeat="sermon in daypart.sermons" itemscope itemtype="http://schema.org/Event">
+          <div class="location" ng-repeat="location in day.location">
+            <!--<h3>{{daypart.daypart}}</h3>-->
+<div ng-repeat="sermon in location.sermons" class="daypart">
+            <article itemscope itemtype="http://schema.org/Event">
               <div itemprop="location">{{sermon.church}}</div>
               <div itemprop="startDate" content="2013-10-13T10:00">{{sermon.time}}</div>
               <div itemprop="performer">{{sermon.preacher}}</div>
+              <div class="audio" ng-if="sermon.audio">
+                <span>Opname</span>
+
+              </div>
             </article>
+</div>
+
           </div>
 
         </div>

@@ -593,8 +593,8 @@ select {
 /* line 126, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_grid.scss */
 .row .row {
   width: auto;
-  margin-left: -0.9375em;
-  margin-right: -0.9375em;
+  margin-left: -0.46875em;
+  margin-right: -0.46875em;
   margin-top: 0;
   margin-bottom: 0;
   max-width: none;
@@ -630,8 +630,8 @@ select {
 .column,
 .columns {
   position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
+  padding-left: 0.46875em;
+  padding-right: 0.46875em;
   width: 100%;
   float: left;
 }
@@ -641,8 +641,8 @@ select {
   .column,
   .columns {
     position: relative;
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
+    padding-left: 0.46875em;
+    padding-right: 0.46875em;
     float: left;
   }
 
@@ -1155,8 +1155,8 @@ select {
 }
 /* line 135, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_grid-5.scss */
 .row .row {
-  margin-left: -0.9375em;
-  margin-right: -0.9375em;
+  margin-left: -0.46875em;
+  margin-right: -0.46875em;
   max-width: none;
   width: auto;
   *zoom: 1;
@@ -1191,8 +1191,8 @@ select {
 /* line 141, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_grid-5.scss */
 .column,
 .columns {
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
+  padding-left: 0.46875em;
+  padding-right: 0.46875em;
   width: 100%;
   float: left;
   position: relative;
@@ -1980,8 +1980,8 @@ header[role=banner] nav:after {
 }
 /* line 61, ../src/scss/app.scss */
 header[role=banner] nav a {
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
+  padding-left: 0.46875em;
+  padding-right: 0.46875em;
   width: 33.33333%;
   float: left;
   color: #fff;
@@ -2019,8 +2019,8 @@ main:after {
 }
 /* line 82, ../src/scss/app.scss */
 main > section {
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
+  padding-left: 0.46875em;
+  padding-right: 0.46875em;
   width: 100%;
   float: left;
 }
@@ -2030,20 +2030,51 @@ main h2,
 main h3 {
   font-size: 1em;
 }
-/* line 92, ../src/scss/app.scss */
+/* line 94, ../src/scss/app.scss */
+main .day > h2 {
+  color: #555;
+  font-size: 1.5em;
+  font-style: italic;
+}
+/* line 102, ../src/scss/app.scss */
+main .location {
+  margin-left: -0.46875em;
+  margin-right: -0.46875em;
+  max-width: none;
+  width: auto;
+  *zoom: 1;
+}
+/* line 121, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_global.scss */
+main .location:before, main .location:after {
+  content: " ";
+  display: table;
+}
+/* line 122, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_global.scss */
+main .location:after {
+  clear: both;
+}
+/* line 105, ../src/scss/app.scss */
+main .daypart {
+  padding-left: 0.46875em;
+  padding-right: 0.46875em;
+  width: 50%;
+  float: left;
+}
+/* line 108, ../src/scss/app.scss */
 main article {
-  margin-left: -0.9375em;
-  margin-right: -0.9375em;
+  margin-left: -0.46875em;
+  margin-right: -0.46875em;
   max-width: none;
   width: auto;
   *zoom: 1;
   background: #fff;
   border-bottom: .2em solid #ddd;
+  border-radius: 2px;
   margin-bottom: 1.25em;
   margin-left: 0;
   margin-right: 0;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
   /*img {
     @include grid-column(3);
   }*/
@@ -2057,10 +2088,10 @@ main article:before, main article:after {
 main article:after {
   clear: both;
 }
-/* line 107, ../src/scss/app.scss */
+/* line 124, ../src/scss/app.scss */
 main article [itemprop=location] {
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
+  padding-left: 0.46875em;
+  padding-right: 0.46875em;
   width: 100%;
   float: left;
   text-transform: uppercase;
@@ -2069,28 +2100,38 @@ main article [itemprop=location] {
   color: #777;
   font-size: .9em;
 }
-/* line 116, ../src/scss/app.scss */
+/* line 133, ../src/scss/app.scss */
 main article [itemprop=startDate] {
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
+  padding-left: 0.46875em;
+  padding-right: 0.46875em;
   width: 25%;
   float: left;
 }
-/* line 119, ../src/scss/app.scss */
+/* line 136, ../src/scss/app.scss */
 main article [itemprop=performer] {
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
+  padding-left: 0.46875em;
+  padding-right: 0.46875em;
   width: 75%;
   float: left;
 }
+/* line 139, ../src/scss/app.scss */
+main article .audio {
+  padding-left: 0.46875em;
+  padding-right: 0.46875em;
+  width: 75%;
+  float: left;
+  color: #ff6600;
+  font-size: .6em;
+  text-transform: uppercase;
+}
 
 @media only screen {
-  /* line 126, ../src/scss/app.scss */
+  /* line 150, ../src/scss/app.scss */
   body {
     padding-top: 60px;
   }
 
-  /* line 129, ../src/scss/app.scss */
+  /* line 153, ../src/scss/app.scss */
   header[role=banner] {
     position: fixed;
     top: 0;
@@ -2098,10 +2139,10 @@ main article [itemprop=performer] {
   }
 }
 @media only screen and (min-width: 768px) {
-  /* line 137, ../src/scss/app.scss */
+  /* line 161, ../src/scss/app.scss */
   .day {
-    margin-left: -0.9375em;
-    margin-right: -0.9375em;
+    margin-left: -0.46875em;
+    margin-right: -0.46875em;
     max-width: none;
     width: auto;
     *zoom: 1;
@@ -2115,22 +2156,25 @@ main article [itemprop=performer] {
   .day:after {
     clear: both;
   }
-  /* line 140, ../src/scss/app.scss */
+  /* line 164, ../src/scss/app.scss */
   .day > h2 {
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
+    padding-left: 0.46875em;
+    padding-right: 0.46875em;
     width: 100%;
     float: left;
+    color: #555;
+    font-size: 2em;
+    font-style: italic;
   }
-  /* line 144, ../src/scss/app.scss */
-  .day .daypart {
-    padding-left: 0.9375em;
-    padding-right: 0.9375em;
+  /* line 172, ../src/scss/app.scss */
+  .day .daypart2 {
+    padding-left: 0.46875em;
+    padding-right: 0.46875em;
     width: 33.33333%;
     float: left;
   }
-  /* line 147, ../src/scss/app.scss */
-  .day .daypart > h3 {
+  /* line 175, ../src/scss/app.scss */
+  .day .daypart2 > h3 {
     display: none;
   }
 }
