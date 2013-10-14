@@ -1988,7 +1988,7 @@ header[role=banner] a {
   float: left;
   color: #fff;
   font-size: 1.1em;
-  line-height: 2em;
+  line-height: 2.2em;
   text-decoration: none;
   position: relative;
   padding-bottom: .2em;
@@ -1997,7 +1997,7 @@ header[role=banner] a {
 }
 /* line 75, ../src/scss/app.scss */
 header[role=banner] a.active {
-  border-bottom: .2em solid #fff;
+  border-bottom: .4em solid #fff;
 }
 
 /* line 80, ../src/scss/app.scss */
