@@ -11,6 +11,12 @@ config(['$httpProvider', function($httpProvider) {
 
 }]).
 
+config(['$sceDelegateProvider', function($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist([
+    'self',
+    'http://diensten.hgkatwijk.nl/**']);
+}]).
+
 config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   //$locationProvider.html5Mode(true);
   $routeProvider.
