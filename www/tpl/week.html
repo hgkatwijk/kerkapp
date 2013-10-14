@@ -17,9 +17,9 @@
         <!--<h3>{{daypart.daypart}}</h3>-->
 <div ng-repeat="sermon in location.sermons" class="daypart">
         <article itemscope itemtype="http://schema.org/Event">
-          <div itemprop="location">{{sermon.church}}</div>
-          <div itemprop="startDate" content="2013-10-13T10:00">{{sermon.time}}</div>
-          <div itemprop="performer">{{sermon.preacher}}</div>
+          <div itemprop="location"><span ng-bind="sermon.church"></span></div>
+          <div itemprop="startDate" content="2013-10-13T10:00"><span ng-bind="sermon.time"></span></div>
+          <div itemprop="performer"><span ng-bind="sermon.preacher"></span></div>
 
           <div class="audio" ng-show="sermon.audio">
             <span>Opname</span>

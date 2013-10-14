@@ -2095,6 +2095,10 @@ main article [itemprop=location] {
   padding-right: 0.46875em;
   width: 100%;
   float: left;
+}
+/* line 128, ../src/scss/app.scss */
+main article [itemprop=location] span {
+  display: block;
   text-transform: uppercase;
   line-height: 1.5em;
   font-weight: bold;
@@ -2104,17 +2108,15 @@ main article [itemprop=location] {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* line 137, ../src/scss/app.scss */
+/* line 140, ../src/scss/app.scss */
 main article [itemprop=startDate] {
   padding-left: 0.46875em;
   padding-right: 0.46875em;
   width: 25%;
   float: left;
-  font-size: .9em;
-  font-weight: bold;
   color: #777;
 }
-/* line 144, ../src/scss/app.scss */
+/* line 145, ../src/scss/app.scss */
 main article [itemprop=performer] {
   padding-left: 0.46875em;
   padding-right: 0.46875em;
@@ -2124,23 +2126,26 @@ main article [itemprop=performer] {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* line 151, ../src/scss/app.scss */
+/* line 152, ../src/scss/app.scss */
 main article .audio {
   padding-left: 0.46875em;
   padding-right: 0.46875em;
   width: 100%;
   float: left;
+}
+/* line 155, ../src/scss/app.scss */
+main article .audio span {
   color: #ff6600;
   font-size: .6em;
   text-transform: uppercase;
 }
-/* line 158, ../src/scss/app.scss */
+/* line 161, ../src/scss/app.scss */
 main article .audio audio {
   display: block;
   margin-top: 2em;
   width: 100%;
 }
-/* line 165, ../src/scss/app.scss */
+/* line 168, ../src/scss/app.scss */
 main article a {
   position: absolute;
   top: 0;
@@ -2150,12 +2155,12 @@ main article a {
 }
 
 @media only screen {
-  /* line 176, ../src/scss/app.scss */
+  /* line 179, ../src/scss/app.scss */
   body {
     padding-top: 60px;
   }
 
-  /* line 179, ../src/scss/app.scss */
+  /* line 182, ../src/scss/app.scss */
   header[role=banner] {
     position: fixed;
     top: 0;
