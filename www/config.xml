@@ -4,7 +4,7 @@
         id        = "nl.hgkatwijk.kerkapp"
         version   = "0.1.0">
 
-  <name>Kerk</name>
+  <name>Kerktijd</name>
 
   <description>
       Bekijk de kerkdiensten van de Hervormde Gemeente Katwijk aan Zee.

@@ -1977,10 +1977,30 @@ header[role=banner] h1 {
   padding-right: 0.9375em;
   width: 66.66667%;
   float: left;
-  font-size: 1em;
+  display: none;
+  font-size: 1.1em;
+}
+/* line 63, ../src/scss/app.scss */
+header[role=banner] a {
+  padding-left: 0.9375em;
+  padding-right: 0.9375em;
+  width: 33.33333%;
+  float: left;
+  color: #fff;
+  font-size: 1.1em;
+  line-height: 1.8em;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: .4em;
+  text-align: center;
+  top: .4em;
+}
+/* line 75, ../src/scss/app.scss */
+header[role=banner] a.active {
+  border-bottom: .4em solid #fff;
 }
 
-/* line 62, ../src/scss/app.scss */
+/* line 80, ../src/scss/app.scss */
 main {
   margin-left: auto;
   margin-right: auto;
@@ -1999,20 +2019,20 @@ main:before, main:after {
 main:after {
   clear: both;
 }
-/* line 65, ../src/scss/app.scss */
+/* line 83, ../src/scss/app.scss */
 main > section {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
   width: 100%;
   float: left;
 }
-/* line 71, ../src/scss/app.scss */
+/* line 89, ../src/scss/app.scss */
 main h1,
 main h2,
 main h3 {
   font-size: 1em;
 }
-/* line 75, ../src/scss/app.scss */
+/* line 93, ../src/scss/app.scss */
 main article {
   border-style: solid;
   border-width: 1px;
@@ -2061,7 +2081,7 @@ main article:before, main article:after {
 main article:after {
   clear: both;
 }
-/* line 86, ../src/scss/app.scss */
+/* line 104, ../src/scss/app.scss */
 main article [itemprop=location] {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
@@ -2073,14 +2093,14 @@ main article [itemprop=location] {
   color: #777;
   font-size: .9em;
 }
-/* line 95, ../src/scss/app.scss */
+/* line 113, ../src/scss/app.scss */
 main article [itemprop=startDate] {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
   width: 25%;
   float: left;
 }
-/* line 98, ../src/scss/app.scss */
+/* line 116, ../src/scss/app.scss */
 main article [itemprop=performer] {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
@@ -2088,8 +2108,20 @@ main article [itemprop=performer] {
   float: left;
 }
 
+@media only screen and (min-width: 768px) {
+  /* line 123, ../src/scss/app.scss */
+  body {
+    padding-top: 50px;
+  }
+
+  /* line 126, ../src/scss/app.scss */
+  header[role=banner] {
+    position: fixed;
+    top: 0;
+  }
+}
 @media only screen and (min-width: 1280px) {
-  /* line 105, ../src/scss/app.scss */
+  /* line 133, ../src/scss/app.scss */
   .day {
     margin-left: -0.9375em;
     margin-right: -0.9375em;
@@ -2106,21 +2138,21 @@ main article [itemprop=performer] {
   .day:after {
     clear: both;
   }
-  /* line 108, ../src/scss/app.scss */
+  /* line 136, ../src/scss/app.scss */
   .day > h2 {
     padding-left: 0.9375em;
     padding-right: 0.9375em;
     width: 100%;
     float: left;
   }
-  /* line 112, ../src/scss/app.scss */
+  /* line 140, ../src/scss/app.scss */
   .day .daypart {
     padding-left: 0.9375em;
     padding-right: 0.9375em;
     width: 50%;
     float: left;
   }
-  /* line 115, ../src/scss/app.scss */
+  /* line 143, ../src/scss/app.scss */
   .day .daypart > h3 {
     display: none;
   }
