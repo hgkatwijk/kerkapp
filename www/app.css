@@ -1959,7 +1959,7 @@ header[role=banner] {
   width: 100%;
   *zoom: 1;
   background: #3498db;
-  border-bottom: .4em solid #2980b9;
+  border-bottom: .2em solid #2980b9;
   color: #fff;
 }
 /* line 121, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_global.scss */
@@ -1988,16 +1988,16 @@ header[role=banner] a {
   float: left;
   color: #fff;
   font-size: 1.1em;
-  line-height: 1.8em;
+  line-height: 2em;
   text-decoration: none;
   position: relative;
-  padding-bottom: .4em;
+  padding-bottom: .2em;
   text-align: center;
-  top: .4em;
+  top: .2em;
 }
 /* line 75, ../src/scss/app.scss */
 header[role=banner] a.active {
-  border-bottom: .4em solid #fff;
+  border-bottom: .2em solid #fff;
 }
 
 /* line 80, ../src/scss/app.scss */
