@@ -5,7 +5,7 @@ Date.prototype.getWeek = function() {
 };
 
 angular.
-module('hgkatwijk-kerkapp', []).
+module('hgkatwijk-kerkapp', ['ngRoute', 'ngTouch']).
 
 config(['$httpProvider', function($httpProvider) {
 
@@ -39,7 +39,7 @@ filter('toArray', function () {
   };
 }).
 
-controller('MainCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
+controller('MainCtrl', ['$scope', '$routeParams', '$http', '$location', function ($scope, $routeParams, $http, $location) {
   var weekNr;
   if ($routeParams.weekNr) {
     weekNr = $routeParams.weekNr;
@@ -54,6 +54,11 @@ controller('MainCtrl', ['$scope', '$routeParams', '$http', function ($scope, $ro
   $scope.curr = weekNr;
   $scope.prev = $scope.curr - 1;
   $scope.next = $scope.curr + 1;
+
+  $scope.gotoWeek = function(week) {
+    console.debug('Goto week ' + week);
+    $location.path('/week/' + week);
+  };
 
   $http.
   jsonp('http://kerkapp.hgkatwijk.nl/api/v1/week.php?week=' + weekNr + '&callback=JSON_CALLBACK').

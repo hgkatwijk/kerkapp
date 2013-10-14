@@ -1,6 +1,8 @@
 CACHE MANIFEST
 # {{timestamp}}
 js/angular.js
+js/angular-route.js
+js/angular-touch.js
 app.css
 app.js
 tpl/week.html
