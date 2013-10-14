@@ -7,14 +7,11 @@ Date.prototype.getWeek = function() {
 angular.
 module('hgkatwijk-kerkapp', ['ngRoute', 'ngTouch']).
 
-config(['$httpProvider', function($httpProvider) {
-
-}]).
-
 config(['$sceDelegateProvider', function($sceDelegateProvider) {
   $sceDelegateProvider.resourceUrlWhitelist([
     'self',
-    'http://diensten.hgkatwijk.nl/**']);
+    'http://diensten.hgkatwijk.nl/*'
+  ]);
 }]).
 
 config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
