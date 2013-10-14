@@ -1951,6 +1951,16 @@ body {
 
 /* line 48, ../src/scss/app.scss */
 header[role=banner] {
+  background: #3498db;
+  border-bottom: .2em solid #2980b9;
+  color: #fff;
+}
+/* line 54, ../src/scss/app.scss */
+header[role=banner] h1 {
+  display: none;
+}
+/* line 58, ../src/scss/app.scss */
+header[role=banner] nav {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0;
@@ -1958,49 +1968,37 @@ header[role=banner] {
   max-width: 62.5em;
   width: 100%;
   *zoom: 1;
-  background: #3498db;
-  border-bottom: .2em solid #2980b9;
-  color: #fff;
 }
 /* line 121, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_global.scss */
-header[role=banner]:before, header[role=banner]:after {
+header[role=banner] nav:before, header[role=banner] nav:after {
   content: " ";
   display: table;
 }
 /* line 122, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_global.scss */
-header[role=banner]:after {
+header[role=banner] nav:after {
   clear: both;
 }
-/* line 55, ../src/scss/app.scss */
-header[role=banner] h1 {
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 66.66667%;
-  float: left;
-  display: none;
-  font-size: 1.1em;
-}
-/* line 63, ../src/scss/app.scss */
-header[role=banner] a {
+/* line 61, ../src/scss/app.scss */
+header[role=banner] nav a {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
   width: 33.33333%;
   float: left;
   color: #fff;
   font-size: 1.1em;
-  line-height: 2.2em;
+  line-height: 2.4em;
   text-decoration: none;
   position: relative;
   padding-bottom: .2em;
   text-align: center;
   top: .2em;
 }
-/* line 75, ../src/scss/app.scss */
-header[role=banner] a.active {
+/* line 73, ../src/scss/app.scss */
+header[role=banner] nav a.active {
   border-bottom: .4em solid #fff;
 }
 
-/* line 80, ../src/scss/app.scss */
+/* line 79, ../src/scss/app.scss */
 main {
   margin-left: auto;
   margin-right: auto;
@@ -2019,20 +2017,20 @@ main:before, main:after {
 main:after {
   clear: both;
 }
-/* line 83, ../src/scss/app.scss */
+/* line 82, ../src/scss/app.scss */
 main > section {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
   width: 100%;
   float: left;
 }
-/* line 89, ../src/scss/app.scss */
+/* line 88, ../src/scss/app.scss */
 main h1,
 main h2,
 main h3 {
   font-size: 1em;
 }
-/* line 93, ../src/scss/app.scss */
+/* line 92, ../src/scss/app.scss */
 main article {
   border-style: solid;
   border-width: 1px;
@@ -2081,7 +2079,7 @@ main article:before, main article:after {
 main article:after {
   clear: both;
 }
-/* line 104, ../src/scss/app.scss */
+/* line 103, ../src/scss/app.scss */
 main article [itemprop=location] {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
@@ -2093,14 +2091,14 @@ main article [itemprop=location] {
   color: #777;
   font-size: .9em;
 }
-/* line 113, ../src/scss/app.scss */
+/* line 112, ../src/scss/app.scss */
 main article [itemprop=startDate] {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
   width: 25%;
   float: left;
 }
-/* line 116, ../src/scss/app.scss */
+/* line 115, ../src/scss/app.scss */
 main article [itemprop=performer] {
   padding-left: 0.9375em;
   padding-right: 0.9375em;
@@ -2108,16 +2106,17 @@ main article [itemprop=performer] {
   float: left;
 }
 
-@media only screen and (min-width: 768px) {
-  /* line 123, ../src/scss/app.scss */
+@media only screen {
+  /* line 122, ../src/scss/app.scss */
   body {
-    padding-top: 50px;
+    padding-top: 60px;
   }
 
-  /* line 126, ../src/scss/app.scss */
+  /* line 125, ../src/scss/app.scss */
   header[role=banner] {
     position: fixed;
     top: 0;
+    width: 100%;
   }
 }
 @media only screen and (min-width: 1280px) {
