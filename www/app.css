@@ -2100,22 +2100,31 @@ main article [itemprop=location] {
   font-weight: bold;
   color: #777;
   font-size: .9em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-/* line 134, ../src/scss/app.scss */
+/* line 137, ../src/scss/app.scss */
 main article [itemprop=startDate] {
   padding-left: 0.46875em;
   padding-right: 0.46875em;
   width: 25%;
   float: left;
+  font-size: .9em;
+  font-weight: bold;
+  color: #777;
 }
-/* line 137, ../src/scss/app.scss */
+/* line 144, ../src/scss/app.scss */
 main article [itemprop=performer] {
   padding-left: 0.46875em;
   padding-right: 0.46875em;
   width: 75%;
   float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-/* line 140, ../src/scss/app.scss */
+/* line 151, ../src/scss/app.scss */
 main article .audio {
   padding-left: 0.46875em;
   padding-right: 0.46875em;
@@ -2125,13 +2134,13 @@ main article .audio {
   font-size: .6em;
   text-transform: uppercase;
 }
-/* line 147, ../src/scss/app.scss */
+/* line 158, ../src/scss/app.scss */
 main article .audio audio {
   display: block;
   margin-top: 2em;
   width: 100%;
 }
-/* line 154, ../src/scss/app.scss */
+/* line 165, ../src/scss/app.scss */
 main article a {
   position: absolute;
   top: 0;
@@ -2141,12 +2150,12 @@ main article a {
 }
 
 @media only screen {
-  /* line 165, ../src/scss/app.scss */
+  /* line 176, ../src/scss/app.scss */
   body {
     padding-top: 60px;
   }
 
-  /* line 168, ../src/scss/app.scss */
+  /* line 179, ../src/scss/app.scss */
   header[role=banner] {
     position: fixed;
     top: 0;

@@ -20,10 +20,12 @@
           <div itemprop="location">{{sermon.church}}</div>
           <div itemprop="startDate" content="2013-10-13T10:00">{{sermon.time}}</div>
           <div itemprop="performer">{{sermon.preacher}}</div>
-          <div class="audio" ng-if="sermon.audio">
+
+          <div class="audio" ng-show="sermon.audio">
             <span>Opname</span>
 
           </div>
+
           <a ng-href="#/item/{{sermon.nid}}"></a>
         </article>
 </div>
