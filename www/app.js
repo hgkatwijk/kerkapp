@@ -1,4 +1,9 @@
 
+Date.prototype.getWeek = function() {
+    var onejan = new Date(this.getFullYear(),0,1);
+    return Math.ceil((((this - onejan) / 86400000) + onejan.getDay()+1)/7);
+};
+
 angular.
 module('hgkatwijk-kerkapp', []).
 
@@ -9,7 +14,7 @@ config(['$httpProvider', function($httpProvider) {
 config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   //$locationProvider.html5Mode(true);
   $routeProvider.
-  when('/week', {
+  when('/week/:weekNr', {
     templateUrl: 'tpl/week.html',
     controller: 'MainCtrl'
   }).
@@ -18,13 +23,28 @@ config(['$routeProvider', '$locationProvider', function ($routeProvider, $locati
     controller: 'ItemCtrl'
   }).
   otherwise({
-    redirectTo: '/week'
+    redirectTo: '/week/'
   });
 }]).
 
-controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
+controller('MainCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
+  var weekNr;
+  if ($routeParams.weekNr) {
+    weekNr = $routeParams.weekNr;
+  }
+  else {
+    var now = new Date();
+    var onejan = new Date(now.getFullYear(),0,1);
+    weekNr = Math.ceil((((now - onejan) / 86400000) + onejan.getDay()+1)/7);
+  }
+  weekNr = parseInt(weekNr, 10);
+
+  $scope.curr = weekNr;
+  $scope.prev = $scope.curr - 1;
+  $scope.next = $scope.curr + 1;
+
   $http.
-  jsonp('http://kerkapp.hgkatwijk.nl/api/v1/upcoming.php?callback=JSON_CALLBACK').
+  jsonp('http://kerkapp.hgkatwijk.nl/api/v1/upcoming.php?week=' + weekNr + '&callback=JSON_CALLBACK').
   success(function(data) {
     var sermons = data;
 
@@ -72,11 +92,6 @@ controller('ItemCtrl', ['$scope', '$routeParams', '$http', function($scope, $rou
   jsonp('http://kerkapp.hgkatwijk.nl/api/v1/upcoming.php?callback=JSON_CALLBACK').
   success(function(data) {
     var sermons = data;
-
-    var months = ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"];
-    var days = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"];
-    var dayparts = ["Ochtend", "Middag", "Avond"];
-
 
     $scope.sermon = sermons[$routeParams.itemId];
 
