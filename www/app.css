@@ -2119,7 +2119,7 @@ main article [itemprop=performer] {
 main article .audio {
   padding-left: 0.46875em;
   padding-right: 0.46875em;
-  width: 75%;
+  width: 100%;
   float: left;
   color: #ff6600;
   font-size: .6em;

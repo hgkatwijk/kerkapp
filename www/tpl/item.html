@@ -13,9 +13,11 @@
       <div itemprop="location">{{sermon.church}}</div>
       <div itemprop="startDate" content="2013-10-13T10:00">{{sermon.time}}</div>
       <div itemprop="performer">{{sermon.preacher}}</div>
-      <div class="audio" ng-if="sermon.audio">
-        <span>Opname</span>
 
+      <div class="audio">
+        <audio ng-if="sermon.audio" ng-src="{{sermon.audio}}" controls>
+
+        </audio>
       </div>
     </article>
 

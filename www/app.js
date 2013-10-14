@@ -44,7 +44,7 @@ controller('MainCtrl', ['$scope', '$routeParams', '$http', function ($scope, $ro
   $scope.next = $scope.curr + 1;
 
   $http.
-  jsonp('http://kerkapp.hgkatwijk.nl/api/v1/upcoming.php?week=' + weekNr + '&callback=JSON_CALLBACK').
+  jsonp('http://kerkapp.hgkatwijk.nl/api/v1/week.php?week=' + weekNr + '&callback=JSON_CALLBACK').
   success(function(data) {
     var sermons = data;
 
@@ -89,7 +89,7 @@ controller('ItemCtrl', ['$scope', '$routeParams', '$http', function($scope, $rou
   $scope.itemId = $routeParams.itemId;
 
   $http.
-  jsonp('http://kerkapp.hgkatwijk.nl/api/v1/upcoming.php?callback=JSON_CALLBACK').
+  jsonp('http://kerkapp.hgkatwijk.nl/api/v1/item.php?item=' + $scope.itemId + '&callback=JSON_CALLBACK').
   success(function(data) {
     var sermons = data;
 
