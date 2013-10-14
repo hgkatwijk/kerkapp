@@ -2125,7 +2125,13 @@ main article .audio {
   font-size: .6em;
   text-transform: uppercase;
 }
-/* line 148, ../src/scss/app.scss */
+/* line 147, ../src/scss/app.scss */
+main article .audio audio {
+  display: block;
+  margin-top: 2em;
+  width: 100%;
+}
+/* line 154, ../src/scss/app.scss */
 main article a {
   position: absolute;
   top: 0;
@@ -2135,12 +2141,12 @@ main article a {
 }
 
 @media only screen {
-  /* line 159, ../src/scss/app.scss */
+  /* line 165, ../src/scss/app.scss */
   body {
     padding-top: 60px;
   }
 
-  /* line 162, ../src/scss/app.scss */
+  /* line 168, ../src/scss/app.scss */
   header[role=banner] {
     position: fixed;
     top: 0;
