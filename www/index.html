@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="hgkatwijk-kerkapp">
+<html manifest="app.appcache" lang="nl" itemscope itemtype="http://schema.org/WebApplication" data-ng-app="hgkatwijk-kerkapp">
   <head>
     <meta charset="utf-8">
 
     <title>Kerktijd</title>
 
-    <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
     <meta name="application-name" content="Kerktijd">
     <meta name="description" content="Bekijk de kerkdiensten van de Hervormde Gemeente Katwijk aan Zee.">
+    <meta name="author" content="Hervormde Gemeente Katwijk aan Zee">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Kerktijd">
@@ -19,43 +19,7 @@
     <script src="js/angular.js"></script>
     <script src="app.js"></script>
   </head>
-  <body role="application" ng-controller="MainCtrl">
-
-    <header role="banner">
-      <h1>Kerktijd</h1>
-      <nav>
-        <a href="#prev">Vorige</a>
-        <a href="#upcoming" class="active">Kerktijd</a>
-        <a href="#next">Volgende</a>
-      </nav>
-    </header>
-
-    <main>
-
-      <section>
-        <div class="day" ng-repeat="day in sermonsByDay">
-          <h2>{{day.date}}</h2>
-
-          <div class="location" ng-repeat="location in day.location">
-            <!--<h3>{{daypart.daypart}}</h3>-->
-<div ng-repeat="sermon in location.sermons" class="daypart">
-            <article itemscope itemtype="http://schema.org/Event">
-              <div itemprop="location">{{sermon.church}}</div>
-              <div itemprop="startDate" content="2013-10-13T10:00">{{sermon.time}}</div>
-              <div itemprop="performer">{{sermon.preacher}}</div>
-              <div class="audio" ng-if="sermon.audio">
-                <span>Opname</span>
-
-              </div>
-            </article>
-</div>
-
-          </div>
-
-        </div>
-      </section>
-
-    </main>
+  <body role="application" data-ng-view>
 
   </body>
 </html>

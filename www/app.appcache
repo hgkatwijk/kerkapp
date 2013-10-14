@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# {{timestamp1}}
+js/angular.js
+app.css
+app.js
+tpl/week.html
+tpl/item.html
+
+NETWORK:
+*

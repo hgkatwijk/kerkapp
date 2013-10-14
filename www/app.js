@@ -6,6 +6,22 @@ config(['$httpProvider', function($httpProvider) {
 
 }]).
 
+config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+  //$locationProvider.html5Mode(true);
+  $routeProvider.
+  when('/week', {
+    templateUrl: 'tpl/week.html',
+    controller: 'MainCtrl'
+  }).
+  when('/item/:itemId', {
+    templateUrl: 'tpl/item.html',
+    controller: 'ItemCtrl'
+  }).
+  otherwise({
+    redirectTo: '/week'
+  });
+}]).
+
 controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
   $http.
   jsonp('http://kerkapp.hgkatwijk.nl/api/v1/upcoming.php?callback=JSON_CALLBACK').
@@ -19,7 +35,7 @@ controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
     var days = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"];
     var dayparts = ["Ochtend", "Middag", "Avond"];
 
-    for (var i = 0; i < sermons.length; i++) {
+    for (var i in sermons) {
       sermon = sermons[i];
       var d = new Date(sermon.date);
       var dp = parseInt(sermon.time.substr(0, 2), 10);
@@ -47,4 +63,22 @@ controller('MainCtrl', ['$scope', '$http', function ($scope, $http) {
 
   });
 
+}]).
+
+controller('ItemCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
+  $scope.itemId = $routeParams.itemId;
+
+  $http.
+  jsonp('http://kerkapp.hgkatwijk.nl/api/v1/upcoming.php?callback=JSON_CALLBACK').
+  success(function(data) {
+    var sermons = data;
+
+    var months = ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"];
+    var days = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"];
+    var dayparts = ["Ochtend", "Middag", "Avond"];
+
+
+    $scope.sermon = sermons[$routeParams.itemId];
+
+  });
 }]);

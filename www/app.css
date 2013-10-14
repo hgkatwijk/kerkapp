@@ -2075,6 +2075,7 @@ main article {
   margin-right: 0;
   padding-top: .5em;
   padding-bottom: .5em;
+  position: relative;
   /*img {
     @include grid-column(3);
   }*/
@@ -2088,7 +2089,7 @@ main article:before, main article:after {
 main article:after {
   clear: both;
 }
-/* line 124, ../src/scss/app.scss */
+/* line 125, ../src/scss/app.scss */
 main article [itemprop=location] {
   padding-left: 0.46875em;
   padding-right: 0.46875em;
@@ -2100,21 +2101,21 @@ main article [itemprop=location] {
   color: #777;
   font-size: .9em;
 }
-/* line 133, ../src/scss/app.scss */
+/* line 134, ../src/scss/app.scss */
 main article [itemprop=startDate] {
   padding-left: 0.46875em;
   padding-right: 0.46875em;
   width: 25%;
   float: left;
 }
-/* line 136, ../src/scss/app.scss */
+/* line 137, ../src/scss/app.scss */
 main article [itemprop=performer] {
   padding-left: 0.46875em;
   padding-right: 0.46875em;
   width: 75%;
   float: left;
 }
-/* line 139, ../src/scss/app.scss */
+/* line 140, ../src/scss/app.scss */
 main article .audio {
   padding-left: 0.46875em;
   padding-right: 0.46875em;
@@ -2124,57 +2125,26 @@ main article .audio {
   font-size: .6em;
   text-transform: uppercase;
 }
+/* line 148, ../src/scss/app.scss */
+main article a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
 @media only screen {
-  /* line 150, ../src/scss/app.scss */
+  /* line 159, ../src/scss/app.scss */
   body {
     padding-top: 60px;
   }
 
-  /* line 153, ../src/scss/app.scss */
+  /* line 162, ../src/scss/app.scss */
   header[role=banner] {
     position: fixed;
     top: 0;
     width: 100%;
-  }
-}
-@media only screen and (min-width: 768px) {
-  /* line 161, ../src/scss/app.scss */
-  .day {
-    margin-left: -0.46875em;
-    margin-right: -0.46875em;
-    max-width: none;
-    width: auto;
-    *zoom: 1;
-  }
-  /* line 121, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_global.scss */
-  .day:before, .day:after {
-    content: " ";
-    display: table;
-  }
-  /* line 122, ../../lib/ruby/gems/gems/zurb-foundation-4.3.2/scss/foundation/components/_global.scss */
-  .day:after {
-    clear: both;
-  }
-  /* line 164, ../src/scss/app.scss */
-  .day > h2 {
-    padding-left: 0.46875em;
-    padding-right: 0.46875em;
-    width: 100%;
-    float: left;
-    color: #555;
-    font-size: 2em;
-    font-style: italic;
-  }
-  /* line 172, ../src/scss/app.scss */
-  .day .daypart2 {
-    padding-left: 0.46875em;
-    padding-right: 0.46875em;
-    width: 33.33333%;
-    float: left;
-  }
-  /* line 175, ../src/scss/app.scss */
-  .day .daypart2 > h3 {
-    display: none;
+    z-index: 100;
   }
 }
