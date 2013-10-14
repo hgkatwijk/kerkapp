@@ -27,6 +27,18 @@ config(['$routeProvider', '$locationProvider', function ($routeProvider, $locati
   });
 }]).
 
+filter('toArray', function () {
+  return function (obj) {
+    if (!(obj instanceof Object)) {
+      return obj;
+    }
+
+    return Object.keys(obj).map(function (key) {
+      return Object.defineProperty(obj[key], '$key', {__proto__: null, value: key});
+    });
+  };
+}).
+
 controller('MainCtrl', ['$scope', '$routeParams', '$http', function ($scope, $routeParams, $http) {
   var weekNr;
   if ($routeParams.weekNr) {
@@ -55,7 +67,8 @@ controller('MainCtrl', ['$scope', '$routeParams', '$http', function ($scope, $ro
     var days = ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"];
     var dayparts = ["Ochtend", "Middag", "Avond"];
 
-    for (var i in sermons) {
+    for (var i=0; i < sermons.length; i++) {
+    //for (var i in sermons) {
       sermon = sermons[i];
       var d = new Date(sermon.date);
       var dp = parseInt(sermon.time.substr(0, 2), 10);
@@ -75,6 +88,7 @@ controller('MainCtrl', ['$scope', '$routeParams', '$http', function ($scope, $ro
       };
       $scope.sermonsByDay[sermon.date].location[sermon.church] = $scope.sermonsByDay[sermon.date].location[sermon.church] || {
         daypart: dp,
+        weight: sermon.weight,
         sermons: {}
       };
 

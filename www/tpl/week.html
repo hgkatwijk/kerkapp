@@ -13,8 +13,8 @@
     <div class="day" ng-repeat="day in sermonsByDay">
       <h2>{{day.date}}</h2>
 
-      <div class="location" ng-repeat="location in day.location">
-        <!--<h3>{{daypart.daypart}}</h3>-->
+      <div class="location" ng-repeat="location in day.location|toArray|orderBy:'weight'">
+        <!--<h3>{{location.weight}}</h3>-->
 <div ng-repeat="sermon in location.sermons" class="daypart">
         <article itemscope itemtype="http://schema.org/Event">
           <div itemprop="location"><span ng-bind="sermon.church"></span></div>
