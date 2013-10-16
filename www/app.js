@@ -1,9 +1,4 @@
 
-Date.prototype.getWeek = function() {
-    var onejan = new Date(this.getFullYear(),0,1);
-    return Math.ceil((((this - onejan) / 86400000) + onejan.getDay()+1)/7);
-};
-
 angular.
 module('hgkatwijk-kerkapp', ['ngRoute', 'ngTouch']).
 
@@ -62,9 +57,13 @@ controller('MainCtrl', ['$scope', '$routeParams', '$http', '$location', function
     console.debug('Goto week ' + week);
     $location.path('/week/' + week);
   };
+  $scope.gotoItem = function(item) {
+    console.debug('Goto item ' + item);
+    $location.path('/item/' + item);
+  };
 
   $http.
-  jsonp('http://kerkapp.hgkatwijk.nl/api/v1/week.php?week=' + weekNr + '&callback=JSON_CALLBACK').
+  jsonp('https://kerkapp.hgkatwijk.nl/api/v1/week.php?week=' + weekNr + '&callback=JSON_CALLBACK').
   success(function(data) {
     var sermons = data;
 
@@ -111,7 +110,7 @@ controller('ItemCtrl', ['$scope', '$routeParams', '$http', function($scope, $rou
   $scope.itemId = $routeParams.itemId;
 
   $http.
-  jsonp('http://kerkapp.hgkatwijk.nl/api/v1/item.php?item=' + $scope.itemId + '&callback=JSON_CALLBACK').
+  jsonp('https://kerkapp.hgkatwijk.nl/api/v1/item.php?item=' + $scope.itemId + '&callback=JSON_CALLBACK').
   success(function(data) {
     var sermons = data;
 
