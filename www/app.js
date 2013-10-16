@@ -1,16 +1,20 @@
 
 angular.
-module('hgkatwijk-kerkapp', ['ngRoute', 'ngTouch']).
+module('hgkatwijk-kerkapp', ['ngRoute', 'ngTouch', 'ngAnimate']).
 
 config(['$sceDelegateProvider', function($sceDelegateProvider) {
   $sceDelegateProvider.resourceUrlWhitelist([
     'self',
-    'http://diensten.hgkatwijk.nl/*'
+    'http://diensten.hgkatwijk.nl/**'
   ]);
 }]).
 
 config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   //$locationProvider.html5Mode(true);
+  var now = new Date();
+  var onejan = new Date(now.getFullYear(),0,1);
+  var currentWeekNr = Math.ceil((((now - onejan) / 86400000) + onejan.getDay()+1)/7);
+
   $routeProvider.
   when('/week/:weekNr', {
     templateUrl: 'tpl/week.html',
@@ -21,7 +25,7 @@ config(['$routeProvider', '$locationProvider', function ($routeProvider, $locati
     controller: 'ItemCtrl'
   }).
   otherwise({
-    redirectTo: '/week/'
+    redirectTo: '/week/' + currentWeekNr
   });
 }]).
 
@@ -42,12 +46,12 @@ controller('MainCtrl', ['$scope', '$routeParams', '$http', '$location', function
   if ($routeParams.weekNr) {
     weekNr = $routeParams.weekNr;
   }
-  else {
+  weekNr = parseInt(weekNr, 10);
+  if (!weekNr) {
     var now = new Date();
     var onejan = new Date(now.getFullYear(),0,1);
     weekNr = Math.ceil((((now - onejan) / 86400000) + onejan.getDay()+1)/7);
   }
-  weekNr = parseInt(weekNr, 10);
 
   $scope.curr = weekNr;
   $scope.prev = $scope.curr - 1;
@@ -63,7 +67,7 @@ controller('MainCtrl', ['$scope', '$routeParams', '$http', '$location', function
   };
 
   $http.
-  jsonp('https://kerkapp.hgkatwijk.nl/api/v1/week.php?week=' + weekNr + '&callback=JSON_CALLBACK').
+  jsonp('http://kerkapp.hgkatwijk.nl/api/v1/week.php?week=' + weekNr + '&callback=JSON_CALLBACK').
   success(function(data) {
     var sermons = data;
 
@@ -106,11 +110,15 @@ controller('MainCtrl', ['$scope', '$routeParams', '$http', '$location', function
 
 }]).
 
-controller('ItemCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
+controller('ItemCtrl', ['$scope', '$routeParams', '$http', '$window', function($scope, $routeParams, $http, $window) {
   $scope.itemId = $routeParams.itemId;
 
+  $scope.goBack = function() {
+    $window.history.back();
+  };
+
   $http.
-  jsonp('https://kerkapp.hgkatwijk.nl/api/v1/item.php?item=' + $scope.itemId + '&callback=JSON_CALLBACK').
+  jsonp('http://kerkapp.hgkatwijk.nl/api/v1/item.php?item=' + $scope.itemId + '&callback=JSON_CALLBACK').
   success(function(data) {
     var sermons = data;
 
